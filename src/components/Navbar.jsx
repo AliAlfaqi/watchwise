@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
+import Search from './Search';
 
 
 export default function Navbar({ userData, logOut }) {
@@ -12,11 +13,12 @@ export default function Navbar({ userData, logOut }) {
                     <li className='px-2'> <Link to='about'>About</Link> </li>
                     <li className='px-2'> <Link to='movies'>Movies</Link> </li>
                     <li className='px-2'> <Link to='tv'>Tv</Link> </li>
-                    <li className='px-2'> <Link to='people'>People</Link> </li>
+                    <li className='px-2'> <Link to='Actors'>Actors</Link> </li>
                 </ul> : ''}
 
 
             </div>
+            <Search />
             <div className="right-nav d-flex align-items-center">
                 <div className="social-media">
                     <i className='fab fa-facebook mx-2' ></i>
