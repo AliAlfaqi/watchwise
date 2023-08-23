@@ -6,14 +6,16 @@ import '@fortawesome/fontawesome-free/css/all.min.css'
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import ConuterContextProvider from './Components/ContextStore/ContextStore';
-
+import SearchContextProvider from './context/SearchContext';
+import MediaContextProvider from './context/MediaContext';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    < ConuterContextProvider>
-      <App />
-    </ConuterContextProvider>
+    <MediaContextProvider>
+      <SearchContextProvider>
+        <App />
+      </SearchContextProvider>
+    </MediaContextProvider>
   </React.StrictMode>
 );
 

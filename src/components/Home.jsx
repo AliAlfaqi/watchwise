@@ -1,12 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import axios from "axios";
-import MediaItem from "../MediaItem/MediaItem";
-import {Helmet} from "react-helmet"
+import MediaItem from "./MediaItem";
+import { Helmet } from "react-helmet"
+import { SearchContext } from "../context/SearchContext";
+import { MediaContext } from "../context/MediaContext";
 
 export default function Home() {
-  const [trendingMovies, setTrendingMovies] = useState([]);
-  const [trendingTv, setTrendingTv] = useState([]);
-  const [trendingPerson, setTrendingPerson] = useState([]);
+
+  const { searchResult } = useContext(SearchContext)
+  const { trendingMovies, trendingPerson, trendingTv } = useContext(MediaContext)
+
+
 
   async function getTrending(mediaType, callback) {
     let { data } = await axios.get(
@@ -15,11 +19,7 @@ export default function Home() {
     callback(data.results);
   }
 
-  useEffect(() => {
-    getTrending("movie", setTrendingMovies);
-    getTrending("tv", setTrendingTv);
-    getTrending("person", setTrendingPerson);
-  }, []);
+
 
   return (
     <>
@@ -28,6 +28,9 @@ export default function Home() {
         <title>WatchWise</title>
         <link rel="canonical" href="http://mysite.com/example" />
       </Helmet>
+      {/* {searchResult.map((item, index) => (
+        <MediaItem index={index} item={item} />
+      ))} */}
 
       <div className="row mb-5">
         <div className="col-md-4 d-flex align-items-center">
@@ -46,7 +49,7 @@ export default function Home() {
         </div>
         {trendingMovies.length > 0 ? trendingMovies.slice(0, 10).map((item, index) => (
           <MediaItem index={index} item={item} />
-        )): <div className="d-flex justify-content-center align-items-center"><i className="fas fa-spin fa-spinner fa-4x"></i></div> }
+        )) : <div className="d-flex justify-content-center align-items-center"><i className="fas fa-spin fa-spinner fa-4x"></i></div>}
       </div>
       <div className="row">
         <div className="col-md-4 d-flex align-items-center">
