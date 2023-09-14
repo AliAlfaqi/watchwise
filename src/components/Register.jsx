@@ -29,7 +29,7 @@ export default function Register() {
         let { data } = await axios.post(`https://user-auth-server-alpha.vercel.app/api/v1/user/signup`, user)
         if (data.message === 'success') {
             setisLoading(false);
-            navigate('/login');
+            navigate('/');
         }
         else {
             setisLoading(false);

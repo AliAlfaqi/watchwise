@@ -19,7 +19,9 @@ export default function Login({ saveUserData }) {
 
     async function sendLoginDataToApi() {
         let { data } = await axios.post(`https://user-auth-server-alpha.vercel.app/api/v1/user/signin`, user);
+        console.log(data);
         if (data.message === 'success') {
+
             localStorage.setItem('userToken', data.token);
             saveUserData();
             navigate('/home')

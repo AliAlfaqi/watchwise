@@ -16,6 +16,8 @@ import Error from "./components/Error";
 import Search from "./components/Search";
 import Actors from "./components/Actors";
 
+
+
 export default function () {
   useEffect(() => {     //remember me feature
     if (localStorage.getItem("userToken") !== null) {
@@ -27,8 +29,10 @@ export default function () {
 
   function saveUserData() {
     let encodedToken = localStorage.getItem("userToken");
-    let decodedToken = jwtDecode(encodedToken, "tokenSignature");
+    console.log(encodedToken);
+    let decodedToken = jwtDecode(encodedToken);
     setUserData(decodedToken);
+    console.log(decodedToken);
   }
 
   const routers = createBrowserRouter([
