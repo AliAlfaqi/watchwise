@@ -1,8 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates&display=swap");
 
 :root {
   --bg-color: #131722;
-  --main-font: 'Montserrat Alternates', sans-serif;
+  --main-font: "Montserrat Alternates", sans-serif;
   --light-bg: #24baef;
   --font-color: #fff;
 }
@@ -25,14 +25,13 @@ a {
 }
 
 .horzLine {
-  height:1px;
+  height: 1px;
   background-color: #fff;
 }
 
 .vote {
   background-color: var(--light-bg);
-  right:-5px !important;
-  
+  right: -5px !important;
 }
 
 .cursor-pointer {
@@ -43,10 +42,21 @@ a {
   color: blue;
 }
 
-
 .movieAge {
   height: 50 px;
   width: 100 px;
   background-color: red;
   color: black;
+}
+
+.search-box {
+  height: 30px;
+  border-radius: 5px;
+  border: 1px solid black;
+  padding: 10px;
+}
+
+.search-box:focus {
+  background-color: #e8f0fe;
+  border-color: red !important;
 }

@@ -10,7 +10,6 @@ import Movies from "./components/Movies";
 import Register from "./components/Register";
 import Tv from "./components/Tv";
 import ItemDetails from "./components/ItemDetails";
-import About from "./components/About";
 import User from "./components/User";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Error from "./components/Error";
@@ -38,7 +37,6 @@ export default function () {
       element: <Layout userData={userData} setUserData={setUserData} />,
       children: [
         { path: "home", element: <ProtectedRoute userData={userData}><Home /></ProtectedRoute> },
-        { path: "about", element: <ProtectedRoute userData={userData}><About /></ProtectedRoute> },
         { path: "movies", element: <ProtectedRoute userData={userData}><Movies /></ProtectedRoute> },
         { path: "tv", element: <ProtectedRoute userData={userData}><Tv /></ProtectedRoute> },
         { index: true, element: <Login saveUserData={saveUserData} /> },

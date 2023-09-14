@@ -18,7 +18,7 @@ export default function Login({ saveUserData }) {
     }
 
     async function sendLoginDataToApi() {
-        let { data } = await axios.post(`https://movies-api.routemisr.com/signin`, user);
+        let { data } = await axios.post(`https://user-auth-server-alpha.vercel.app/api/v1/signin`, user);
         if (data.message === 'success') {
             localStorage.setItem('userToken', data.token);
             saveUserData();

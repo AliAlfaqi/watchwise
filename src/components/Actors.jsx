@@ -7,9 +7,11 @@ export default function Actors() {
     const { trendingPerson } = useContext(MediaContext)
     return (
         <>
-            {trendingPerson.slice(0, 10).map((item, index) => (
-                <Actor index={index} item={item} />
-            ))}
+            <div className="row">
+                {trendingPerson.slice(0, 10).map((item, index) => (
+                    <Actor index={index} item={item} />
+                ))}
+            </div>
         </>
     )
 }

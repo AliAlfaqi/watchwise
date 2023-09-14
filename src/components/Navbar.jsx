@@ -1,25 +1,26 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
-import Search from './Search';
+import Search from './SearchBox';
 
 
 export default function Navbar({ userData, logOut }) {
     return <>
         <nav className='p-2 d-flex justify-content-between'>
             <div className="left-nav d-flex align-items-center">
-                <h1 className='m-0 pe-3 fw-bolder'>WatchWise</h1>
+                <Link to="home"><h1 className='m-0 pe-3 fw-bolder'>WatchWise</h1></Link>
                 {userData ? <ul className='list-unstyled d-flex align-items-center m-0' >
                     <li className='px-2'> <Link to='home'>Home</Link> </li>
-                    <li className='px-2'> <Link to='about'>About</Link> </li>
                     <li className='px-2'> <Link to='movies'>Movies</Link> </li>
                     <li className='px-2'> <Link to='tv'>Tv</Link> </li>
-                    <li className='px-2'> <Link to='Actors'>Actors</Link> </li>
+                    <li className='px-2'> <Link to='actors'>Actors</Link> </li>
                 </ul> : ''}
 
 
             </div>
-            <Search />
+
             <div className="right-nav d-flex align-items-center">
+
+                <Search />
                 <div className="social-media">
                     <i className='fab fa-facebook mx-2' ></i>
                     <i className='fab fa-youtube mx-2' ></i>
