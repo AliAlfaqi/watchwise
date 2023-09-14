@@ -26,7 +26,7 @@ export default function Register() {
     }
 
     async function sendRegisterDataToApi() {
-        let { data } = await axios.post(`https://user-auth-server-alpha.vercel.app/api/v1/signup`, user)
+        let { data } = await axios.post(`https://user-auth-server-alpha.vercel.app/api/v1/user/signup`, user)
         if (data.message === 'success') {
             setisLoading(false);
             navigate('/login');
