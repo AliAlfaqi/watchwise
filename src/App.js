@@ -27,7 +27,7 @@ export default function () {
 
   function saveUserData() {
     let encodedToken = localStorage.getItem("userToken");
-    let decodedToken = jwtDecode(encodedToken);
+    let decodedToken = jwtDecode(encodedToken, "tokenSignature");
     setUserData(decodedToken);
   }
 
